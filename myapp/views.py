@@ -34,4 +34,8 @@ def tasks(request):
   # task = get_object_or_404(Task, id=id) # Recomendado
   # task = get_object_or_404(Task, title=title)
   # return HttpResponse(task.title)
-  return render(request, 'tasks.html')
+  
+  tasks = Task.objects.all()
+  return render(request, 'tasks.html', {
+    'tasks': tasks
+  })
