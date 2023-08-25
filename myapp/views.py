@@ -4,10 +4,16 @@ from .models import Project, Task
 
 # Create your views here.
 def index(request):
-  return render(request, 'index.html')
+  title = 'Welcome to my django web'
+  return render(request, 'index.html', {
+    'title': title
+  })
 
 def about(request):
-  return render(request, 'about.html')
+  username = 'e93'
+  return render(request, 'about.html', {
+    'username': username
+  })
 
 def hello(request, username):
   print(username)
@@ -16,7 +22,11 @@ def hello(request, username):
 def projects(request):
   # projects = list(Project.objects.values())
   # return JsonResponse(projects, safe=False)
-  return render(request, 'projects.html')
+  
+  projects = Project.objects.all()
+  return render(request, 'projects.html', {
+    'projects': projects
+  })
 
 
 def tasks(request):
