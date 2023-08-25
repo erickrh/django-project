@@ -14,12 +14,14 @@ def hello(request, username):
   return HttpResponse(f'Go to the hell, {username}')
 
 def projects(request):
-  projects = list(Project.objects.values())
-  return JsonResponse(projects, safe=False)
+  # projects = list(Project.objects.values())
+  # return JsonResponse(projects, safe=False)
+  return render(request, 'projects.html')
 
 
-def tasks(request, title):
+def tasks(request):
   # task = Task.objects.get(title=title)
   # task = get_object_or_404(Task, id=id) # Recomendado
-  task = get_object_or_404(Task, title=title)
-  return HttpResponse(task.title)
+  # task = get_object_or_404(Task, title=title)
+  # return HttpResponse(task.title)
+  return render(request, 'tasks.html')
