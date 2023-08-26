@@ -1,7 +1,15 @@
 <h1>My tasks</h1>
 <article>
   {% for task in tasks %}
-    <h2>{{ task.title }}</h2>
+    <h2>{% if task.done %} ✅ {% else %} ⏱ {% endif %} {{ task.title }}</h2>
+
+    <!-- {% if task.done %}
+      <p>Tarea realizada</p>
+    {% else %}
+      <p>Tarea pendiente</p>
+    {% endif %} -->
+    {# Comentario en jinja, no se ve en el HTML #}
+
     <p>{{ task.description }}</p>
     <p>Project: {{ task.project.name }}</p>
     <button type="button">Delete</button>

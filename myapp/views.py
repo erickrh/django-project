@@ -28,7 +28,6 @@ def projects(request):
     'projects': projects
   })
 
-
 def tasks(request):
   # task = Task.objects.get(title=title)
   # task = get_object_or_404(Task, id=id) # Recomendado
@@ -37,5 +36,5 @@ def tasks(request):
   
   tasks = Task.objects.all()
   return render(request, 'tasks.html', {
-    'tasks': tasks
+    'tasks': tasks,
   })
