@@ -1,4 +1,5 @@
 {% extends 'layouts/base.html' %}
+{% load static %}
 
 {% block saludo %}
   <p>Hola</p>
@@ -6,5 +7,8 @@
 
 {% block content %}
   <h1>{{ title }}</h1>
+
+  <img src="{% static 'django.png' %}" alt="Django logo" style='width: 400px;'>
+
   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, reiciendis qui, omnis dicta provident autem illo odit quaerat ab eum, impedit neque sed. Fugiat placeat in dignissimos necessitatibus vel accusantium!</p>
 {% endblock %}
