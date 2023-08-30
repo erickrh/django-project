@@ -25,7 +25,7 @@ def projects(request):
   # return JsonResponse(projects, safe=False)
   
   projects = Project.objects.all()
-  return render(request, 'projects.html', {
+  return render(request, 'projects/projects.html', {
     'projects': projects
   })
 
@@ -36,13 +36,13 @@ def tasks(request):
   # return HttpResponse(task.title)
   
   tasks = Task.objects.all()
-  return render(request, 'tasks.html', {
+  return render(request, 'tasks/tasks.html', {
     'tasks': tasks,
   })
 
 def create_task(request):
   if request.method == 'GET':
-      return render(request, 'create_task.html', {
+      return render(request, 'tasks/create_task.html', {
       'form': Create_new_task()
       })
   else:
