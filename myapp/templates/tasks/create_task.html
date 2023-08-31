@@ -4,7 +4,7 @@
 <h1>Create a new task</h1>
 <form method='post'>
   {% csrf_token %}
-  {{ form.as_p }}
+  {{ form.as_div }}
   <button type="submit">Submit</button>
 </form>
 {% endblock %}
